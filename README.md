@@ -65,7 +65,11 @@ dependencies managed by Conda and pip.
     conda deactivate
     ```
 
-For further questions or issues, please open an issue in the repository or contact the project maintainers.
+# Download Visium Data
+
+Download the data from the following
+link: [Visium Data](https://drive.google.com/drive/folders/1axyYEzjwNwqurKqSgOgDwhUTe_iNeqih)
+and place it in the `data/Visium/` directory.
 
 # Credits
 

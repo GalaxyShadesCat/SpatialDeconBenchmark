@@ -1,1 +1,4 @@
 .idea/
+
+# Ignore CSV files in Visium directory
+data/Visium/*.csv
