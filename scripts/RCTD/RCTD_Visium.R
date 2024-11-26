@@ -61,7 +61,7 @@ myRCTD <- run.RCTD(myRCTD, doublet_mode = 'full') # full mode
 end_time <- Sys.time()
 
 weights=myRCTD@results$weights
-norm_weights=normalize_weights(weights) # # get cell type ratios
+norm_weights=normalize_weights(weights) # get cell type ratios
 print(end_time-start_time)
 
 write.csv(as.matrix(norm_weights),out_matrix_norm_fp)
