@@ -76,5 +76,5 @@ and place it in the `data/Visium/` directory.
 | Task                                                    | Contributor |
 |---------------------------------------------------------|-------------|
 | Creation of GitHub Repository & Programming Environment | Lem         |
-| Generate Ground Truth for seqFISH+                      | Lem         |
-| Filtering and Cleaning Visium Data                      | Vanessa     |
+| Prepare seqFISH+ Data for Benchmarking                  | Lem         |
+| Filter and Clean Visium Data                            | Vanessa     |
