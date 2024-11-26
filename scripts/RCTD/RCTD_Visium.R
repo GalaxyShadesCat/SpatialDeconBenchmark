@@ -1,7 +1,6 @@
 library(spacexr)
 library(Matrix)
 library(readxl)
-library(dplyr)
 setwd('C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/RCTD/')
 
 # data loading
