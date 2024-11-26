@@ -10,10 +10,18 @@ ground_truth = read.csv('C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/
 keep_cells_index = row.names(ground_truth) 
 location = read.csv('C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/seqFISH+/Lem_Locations2.csv',header = T,row.names = 4)
 location = location[rownames(location) %in% keep_cells_index, ] # only keep rows that appear in both ground truth and location
-for(i in 1:nrow(location)){
-  location[i, c('X', 'Y')] = c(as.numeric(location[i, 1]), as.numeric(location[i, 2]))
+a <- 1
+b <- 1
+for (i in 1:nrow(location)) {
+  location[i, c('X', 'Y')] = c(a, b)  # Assign current values of a and b
+  
+  b <- b + 1  # Increment b
+  
+  if (b > 10) {  # If b exceeds 10, reset to 1 and increment a
+    b <- 1
+    a <- a + 1
+  }
 }
-
 setwd('C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/evaluation & visualization/data/')
 # data folder stores result from different methods (make sure only contains cell ratio csv)
 
@@ -45,7 +53,7 @@ for (ct in cell_types) { # create png for each cell type
   
   for(i in 1:length(ls_method)){ # go through all results
     predict = read.csv(ls_method[i],header=T,row.names = 1 )
-    predict = predict[rownames(predict) %in% delete_cells_index, ]
+    predict = predict[rownames(predict) %in% keep_cells_index, ]
     title = gsub('.csv','',ls_method[i])
     if(title == 'SD2'){
       title = expression(SD^2)
