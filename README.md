@@ -66,3 +66,11 @@ dependencies managed by Conda and pip.
     ```
 
 For further questions or issues, please open an issue in the repository or contact the project maintainers.
+
+# Credits
+
+| Task                                                    | Contributor |
+|---------------------------------------------------------|-------------|
+| Creation of GitHub Repository & Programming Environment | Lem         |
+| Generate Ground Truth for seqFISH+                      | Lem         |
+| Filtering and Cleaning Visium Data                      | Vanessa     |
