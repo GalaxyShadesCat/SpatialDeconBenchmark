@@ -45,7 +45,7 @@ for (ct in cell_types) { # create png for each cell type
   
   for(i in 1:length(ls_method)){ # go through all results
     predict = read.csv(ls_method[i],header=T,row.names = 1 )
-    predict = predict[rownames(predict) %in% delete_cells_index, ]
+    predict = predict[rownames(predict) %in% keep_cells_index, ]
     title = gsub('.csv','',ls_method[i])
     if(title == 'SD2'){
       title = expression(SD^2)
