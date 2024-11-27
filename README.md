@@ -36,6 +36,15 @@ RScript scripts/DataTools/clean_visium.R
 ```bash
 jupyter execute scripts/Tangram/Tangram.ipynb
 ```
+
+# Compare Results
+
+## seqFISH+ Dataset
+
+```bash
+jupyter execute scripts/Metrics/calculate_metrics.ipynb
+```
+
 # Credits
 
 | Task                                                    | Contributor |
