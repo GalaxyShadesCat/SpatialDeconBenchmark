@@ -19,7 +19,7 @@ conda activate spatial-deconv
 # Prepare seqFISH+ Dataset
 
 ```bash
-jupyter nbconvert --to notebook --execute --inplace notebooks/seqFISH.ipynb
+jupyter execute notebooks/seqFISH.ipynb
 ```
 
 # Download and Clean Visium Dataset
