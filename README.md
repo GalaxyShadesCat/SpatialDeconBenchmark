@@ -10,25 +10,32 @@ our [setup guide](docs/setup-development-environment.md).
 **Important:** Before executing any subsequent commands, ensure that you are in the project's root directory and have
 activated the necessary Conda environment. Failing to do so may result in commands not working as expected.
 
-To activate the environment, use the following command:
+To create and activate the environment, use the following command:
 
 ```bash
+conda env create -f environment.yml
 conda activate spatial-deconv
 ```
 
 # Prepare seqFISH+ Dataset
 
 ```bash
-jupyter execute notebooks/seqFISH.ipynb
+jupyter execute scripts/DataTools/seqFISH.ipynb
 ```
 
 # Download and Clean Visium Dataset
 
 ```bash
-bash scripts/Visium/download_visium.sh
-RScript scripts/Visium/clean_visium.R
+bash scripts/DataTools/download_visium.sh
+RScript scripts/DataTools/clean_visium.R
 ```
 
+# Run Spatial Deconvolution Methods
+
+## Tangram
+```bash
+jupyter execute scripts/Tangram/Tangram.ipynb
+```
 # Credits
 
 | Task                                                    | Contributor |

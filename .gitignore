@@ -4,6 +4,8 @@
 data/Visium/input/spatial/
 data/Visium/input/*.h5
 data/Visium/input/*.gz
+data/Visium/input/*.csv
+data/Visium/*.rds
 data/Visium/*.csv
 
 data/methods/Tangram/*.h5ad
