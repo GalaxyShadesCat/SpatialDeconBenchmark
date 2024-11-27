@@ -1,75 +1,33 @@
 # SpatialDeconBenchmark
+
 This repository hosts resources for a benchmark study on spatial transcriptomics deconvolution, assessing various computational methods to deconvolve mixed cell-type spots in complex tissues.
 
-# Project Environment Setup
+# Setup Development Environment
 
-## Overview
+For detailed instructions on setting up your development environment, please refer to
+our [setup guide](docs/setup-development-environment.md).
 
-This guide will help you set up the necessary Conda environment to run and develop the project. The environment includes
-dependencies managed by Conda and pip.
+**Important:** Before executing any subsequent commands, ensure that you are in the project's root directory and have
+activated the necessary Conda environment. Failing to do so may result in commands not working as expected.
 
-## Prerequisites
+To activate the environment, use the following command:
 
-- [Anaconda](https://www.anaconda.com/products/individual)
-  or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) installed on your machine.
+```bash
+conda activate spatial-deconv
+```
 
-## Setting Up Your Environment
+# Prepare seqFISH+ Dataset
 
-1. **Clone the repository**:
-   Start by cloning this repository to your local machine.
+```bash
+jupyter nbconvert --to notebook --execute --inplace notebooks/seqFISH.ipynb
+```
 
-    ```bash
-    git clone https://github.com/GalaxyShadesCat/SpatialDeconBenchmark.git
-    cd SpatialDeconBenchmark
-    ```
+# Download and Clean Visium Dataset
 
-2. **Create the environment**:
-   Use the `environment.yml` file provided in the repository to create an identical Conda environment.
-
-    ```bash
-    conda env create -f environment.yml
-    ```
-
-   This command will create a new Conda environment that includes all necessary Conda and pip packages.
-
-3. **Activate the environment**:
-   Once the environment is successfully created, you can activate it using:
-
-    ```bash
-    conda activate spatial-deconv
-    ```
-
-4. **Verify the environment**:
-   To ensure everything is set up correctly, you can check the installed packages:
-
-    ```bash
-    conda list
-    ```
-
-## Troubleshooting
-
-- **Issues with the environment creation**: If you encounter errors during the environment creation, make sure that your
-  Conda is up to date. Update Conda using:
-
-    ```bash
-    conda update conda
-    ```
-
-- **Package conflicts**: In case of package conflicts, you may need to resolve specific package versions manually.
-
-## Additional Information
-
-- The environment can be deactivated by running:
-
-    ```bash
-    conda deactivate
-    ```
-
-# Download Visium Data
-
-Download the data from the following
-link: [Visium Data](https://drive.google.com/drive/folders/1axyYEzjwNwqurKqSgOgDwhUTe_iNeqih)
-and place it in the `data/Visium/` directory.
+```bash
+bash scripts/Visium/download_visium.sh
+RScript scripts/Visium/clean_visium.R
+```
 
 # Credits
 

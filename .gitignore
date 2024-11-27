@@ -1,4 +1,9 @@
 .idea/
+.vscode/
+
+data/Visium/input/spatial/
+data/Visium/input/*.h5
+data/Visium/input/*.gz
+data/Visium/*.csv
 
 data/methods/Tangram/*.h5ad
-data/Visium/*.csv
