@@ -1,8 +1,11 @@
 ###  seqFISH+ visualization
+current_working_directory <- getwd()
+setwd(file.path(current_working_directory, 'scripts', 'Visualization'))
 library(Rmisc)
 library(ggplot2)
 library(stringr)
 source('metrics.R')
+setwd(file.path(current_working_directory, 'scripts'))
 
 # data loading
 ground_truth = read.csv('../data/seqFISH/ground_truth.csv',row.names=1)
@@ -76,3 +79,4 @@ for (ct in cell_types) { # create png for each cell type
   multiplot(pt,p1,p2, cols = 6) # add p3... depending on number of csv in data folder
   dev.off()
 }
+setwd(current_working_directory)
