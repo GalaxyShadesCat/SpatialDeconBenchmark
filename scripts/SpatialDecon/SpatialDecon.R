@@ -5,6 +5,13 @@ library(Seurat)
 library(SeuratObject)
 library(Matrix)
 
+# Set paths for input and output
+current_working_directory <- getwd()
+
+# Set paths for input and output using the current working directory
+input_path <- paste0(current_working_directory, "/data/Visium/input/")
+output_path <- paste0(current_working_directory, "/data/Visium/")
+
 #write.csv(visium_paired_sc_labels_df, "/Users/vanessayu/biof3001/dataset/visium/filtered_sc_annotations_updated.csv")
 #write.csv(visium_paired_sc_counts, "/Users/vanessayu/biof3001/dataset/visium/filtered_sc_counts.csv")
 #write.csv(visium_st_locations, "/Users/vanessayu/biof3001/dataset/visium/filtered_st_locations.csv")
@@ -12,10 +19,10 @@ library(Matrix)
 
 
 visium_data <- list(
-  st_counts=visium_st_counts,
-  st_locations=visium_st_locations,
-  sc_counts=visium_paired_sc_counts,
-  sc_labels=visium_paired_sc_labels
+  st_counts=st_counts,
+  st_locations=st_locations,
+  sc_counts=sc_counts,
+  sc_labels=sc_labels
 )
 
 preprocess=function(data){
