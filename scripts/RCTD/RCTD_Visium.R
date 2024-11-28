@@ -31,7 +31,7 @@ load_Visium=function(){
 }
 
 data = load_Visium()
-out_dir="../Vdata" # output directory
+out_dir="../resuts/Visium/" # output directory
 dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
 out_matrix_norm_fp=file.path(out_dir,sprintf("Visium_RCTD.csv")) # output file name
 
