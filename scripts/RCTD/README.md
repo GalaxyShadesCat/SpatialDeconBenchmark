@@ -4,7 +4,7 @@ Create an R 4.4.2 conda environment and install `devtools`
 ```
 conda create -n RCTD r-base=4.4.2 r-devtools
 ```
-Use `devtools` to install spacexr and Redeconve
+Use `devtools` to install spacexr
 ```
 devtools::install_github("dmcable/spacexr", build_vignettes = FALSE)
 ```
