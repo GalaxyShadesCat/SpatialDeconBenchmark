@@ -1,18 +1,17 @@
 library(spacexr)
 library(Matrix)
 library(readxl)
-setwd('C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/RCTD/')
 
 # data loading
-st_counts_fp=("C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/seqFISH+/gene_expressions.csv")
-st_locations_fp="C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/seqFISH+/Lem_Locations2.csv"
-sc_counts_fp="C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/seqFISH+/raw_somatosensory_sc_exp.txt"
-sc_labels_fp="C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/seqFISH+/somatosensory_sc_labels.txt"
+st_counts_fp="../data/seqFISH/st_counts.csv"
+st_locations_fp="../data/seqFISH/st_coords.csv"
+sc_counts_fp="../data/seqFISH/raw_somatosensory_sc_exp.txt"
+sc_labels_fp="../data/seqFISH/somatosensory_sc_labels.txt"
 
 st_counts=read.csv(st_counts_fp,sep=",",row.names=1) # row name is global bin id
 st_counts=t(st_counts)
-st_locations=read.csv(st_locations_fp,sep=",",row.name=4) # row name is global bin id
-st_locations=st_locations[,c("X_bin","Y_bin")]
+st_locations=read.csv(st_locations_fp,sep=",",row.name=1) # row name is global bin id
+st_locations=st_locations[,c("x","y")]
 
 sc_counts=read.csv(sc_counts_fp,sep="\t",row.names=1)
 sc_labels=read.csv(sc_labels_fp,header=FALSE)$V1
@@ -29,9 +28,9 @@ load_seqFISH=function(){
 }
 
 data = load_seqFISH()
-out_dir="../data" # output file path
+out_dir="../results" # output file path
 dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
-out_matrix_norm_fp=file.path(out_dir,sprintf("seqFISH_10000.RCTD.norm3.csv")) # output file name
+out_matrix_norm_fp=file.path(out_dir,sprintf("seqFISH_RCTD.csv")) # output file name
 
 sc_reference=Reference(
   counts=data$sc_counts,
