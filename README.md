@@ -15,6 +15,7 @@ To create and activate the environment, use the following command:
 ```bash
 conda env create -f environment.yml
 conda activate spatial-deconv
+Rscript scripts/DataTools/install_packages.R
 ```
 
 # Prepare seqFISH+ Dataset
@@ -39,10 +40,16 @@ jupyter execute scripts/Tangram/Tangram.ipynb
 
 # Compare Results
 
-## seqFISH+ Dataset
+## seqFISH+ Benchmarking Results
 
 ```bash
 jupyter execute scripts/Metrics/calculate_metrics.ipynb
+```
+
+## Visium Benchmarking Results
+
+```bash
+jupyter execute scripts/Metrics/calculate_spot_metrics.ipynb
 ```
 
 # Credits

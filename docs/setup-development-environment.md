@@ -55,3 +55,8 @@ dependencies managed by Conda and pip.
     conda list
     ```
 
+5. **Install R Packages**:
+
+    ```bash
+    Rscript scripts/DataTools/install_packages.R
+    ```
