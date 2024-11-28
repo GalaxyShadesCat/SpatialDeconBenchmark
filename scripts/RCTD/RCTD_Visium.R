@@ -1,7 +1,5 @@
 library(spacexr)
 library(Matrix)
-library(readxl)
-setwd('C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/RCTD/')
 
 # data loading
 load_Visium=function(){ 
@@ -33,9 +31,9 @@ load_Visium=function(){
 }
 
 data = load_Visium()
-out_dir="../Vdata" # output directory
+out_dir="../resuts/Visium/" # output directory
 dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
-out_matrix_norm_fp=file.path(out_dir,sprintf("Visium.RCTD.norm.csv")) # output file name
+out_matrix_norm_fp=file.path(out_dir,sprintf("Visium_RCTD.csv")) # output file name
 
 sc_reference=Reference(
     counts=data$sc_counts,
@@ -54,7 +52,7 @@ st_data=SpatialRNA(
 
 start_time <- Sys.time()
 
-myRCTD <- create.RCTD(st_data, sc_reference, max_cores = 8, CELL_MIN_INSTANCE = 1) # minimum number of instances for each cell type = 1
+myRCTD <- create.RCTD(st_data, sc_reference, max_cores = 8, CELL_MIN_INSTANCE = 1,UMI_min = 0,counts_MIN = 0) # minimum number of instances for each cell type = 1, UMI_min & counts_MIN = 0 to include all spots
 myRCTD <- run.RCTD(myRCTD, doublet_mode = 'full') # full mode
 
 end_time <- Sys.time()
