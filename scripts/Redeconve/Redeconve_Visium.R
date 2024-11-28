@@ -1,3 +1,4 @@
+library(spacexr)
 library(Redeconve)
 
 # data loading
@@ -32,9 +33,9 @@ load_Visium=function(){ # same input format as RCTD
 }
 
 data = load_Visium()
-out_dir="../Vdata" # output directory
+out_dir="../results/Visium/" # output directory
 dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
-out_matrix_norm_fp=file.path(out_dir,sprintf("Visium.Redeconve.norm3.csv")) # output file name
+out_matrix_norm_fp=file.path(out_dir,sprintf("Visium_Redeconve.csv")) # output file name
 
 sc_reference=Reference(
   counts=data$sc_counts,
