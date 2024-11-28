@@ -5,26 +5,21 @@ library(Seurat)
 library(SeuratObject)
 library(Matrix)
 
+# get method from command line 
+args <- commandArgs(trailingOnly = TRUE)
+method <- args[1]
+
 # Set paths for input and output
 current_working_directory <- getwd()
 
 # Set paths for input and output using the current working directory
-input_path <- paste0(current_working_directory, "/data/Visium/input/")
-output_path <- paste0(current_working_directory, "/data/Visium/")
+input_path <- paste0(current_working_directory, "/data/", method, "/")
+output_path <- paste0(current_working_directory, "/results/methods/", method, "/")
 
-#write.csv(visium_paired_sc_labels_df, "/Users/vanessayu/biof3001/dataset/visium/filtered_sc_annotations_updated.csv")
-#write.csv(visium_paired_sc_counts, "/Users/vanessayu/biof3001/dataset/visium/filtered_sc_counts.csv")
-#write.csv(visium_st_locations, "/Users/vanessayu/biof3001/dataset/visium/filtered_st_locations.csv")
-#write.csv(visium_st_counts, "/Users/vanessayu/biof3001/dataset/visium/filtered_st_counts.csv")
+# read in data
+data <- readRDS(paste0(input_path, "filtered_data.rds"))
 
-
-visium_data <- list(
-  st_counts=st_counts,
-  st_locations=st_locations,
-  sc_counts=sc_counts,
-  sc_labels=sc_labels
-)
-
+# preprocess and normalize ST data
 preprocess=function(data){
   st_counts_norm = sweep(data$st_counts, 2, colSums(data$st_counts), "/") * mean(colSums(data$st_counts)) # normalization
   st_object=CreateSeuratObject(counts=st_counts_norm,assay="Spatial")
@@ -32,7 +27,7 @@ preprocess=function(data){
   st_object=AddMetaData(st_object,data$st_locations[colnames(st_object),1],col.name="x")
   st_object=AddMetaData(st_object,data$st_locations[colnames(st_object),2],col.name="y")
   
-  stopifnot(all(colnames(data$sc_counts)==names(data$sc_labels)))
+  stopifnot(all(colnames(data$sc_counts)==rownames(data$sc_labels)))
   
   sc_counts_matrix=as.matrix(data$sc_counts)
   sc_counts_matrix=Matrix::Matrix((sc_counts_matrix),sparse=TRUE)
@@ -57,10 +52,9 @@ preprocess=function(data){
   )
 }
 
-setwd("/Users/vanessayu/biof3001/dataset/visium")
-out_dir="./SpatialDecon_results/correctly_paired_1127"
-dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
-out_matrix_norm_fp=file.path(out_dir,sprintf("Visium_SpatialDecon.csv"))
+
+#dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
+out_matrix_norm_fp=file.path(out_path,paste0(method,"_SpatialDecon.csv"))
 
 processed_data=preprocess(data)
 
@@ -74,7 +68,7 @@ res = runspatialdecon(object = processed_data$st_object,
 end_time <- Sys.time()
 run_time <- as.numeric(difftime(end_time, start_time, units = "secs"))
 print("Finished running.")
-logfile <- file(paste0(out_dir, "/runtime.txt"))
+logfile <- file(paste0(out_dir, "/", method, "_runtime.txt"))
 writeLines(c("Runtime: ", run_time), logfile)
 close(logfile)
 
