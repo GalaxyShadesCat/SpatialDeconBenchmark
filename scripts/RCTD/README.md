@@ -13,4 +13,4 @@ devtools::install_github("dmcable/spacexr", build_vignettes = FALSE)
 Rscript RCTD_seqFISH+.R
 Rscript RCTD_Visium.R
 ```
-This will run RCTD (spacexr) on the seqFISH and Visium dataset. Output will be stored in `results/seqFISH/seqFISH_RCTD.csv`.
+This will run RCTD (spacexr) on the seqFISH and Visium datasets. Output will be stored in `results`.
