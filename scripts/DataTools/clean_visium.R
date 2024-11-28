@@ -1,9 +1,3 @@
-# Set a CRAN mirror
-options(repos = c(CRAN = "https://cloud.r-project.org"))
-
-install.packages("hdf5r")
-install.packages("Seurat")
-
 library(dplyr)
 library(Matrix)
 library(hdf5r)
