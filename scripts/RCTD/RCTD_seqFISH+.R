@@ -1,6 +1,8 @@
 library(spacexr)
 library(Matrix)
-
+current_working_directory <- getwd()
+setwd(file.path(current_working_directory, 'scripts'))
+  
 # data loading
 st_counts_fp="../data/seqFISH/st_counts.csv"
 st_locations_fp="../data/seqFISH/st_coords.csv"
@@ -54,3 +56,4 @@ norm_weights=normalize_weights(weights) # get cell type ratios
 print(end_time-start_time)
 
 write.csv(as.matrix(norm_weights),out_matrix_norm_fp)
+setwd(current_working_directory)
