@@ -1,6 +1,5 @@
 library(spacexr)
 library(Matrix)
-library(readxl)
 
 # data loading
 st_counts_fp="../data/seqFISH/st_counts.csv"
