@@ -48,15 +48,15 @@ RScript scripts/DataTools/clean_visium.R
 ## RCTD
 ```bash
 conda activate r-env
-RScript scripts/RCTD/RCTD_seqFISH.ipynb
-RScript scripts/RCTD/RCTD_Visium.ipynb
+RScript scripts/RCTD/RCTD_seqFISH.R
+RScript scripts/RCTD/RCTD_Visium.R
 ```
 
 ## Redeconve
 ```bash
 conda activate r-env
-RScript scripts/Redeconve/Redeconve_seqFISH.ipynb
-RScript scripts/Redeconve/Redeconve_Visium.ipynb
+RScript scripts/Redeconve/Redeconve_seqFISH.R
+RScript scripts/Redeconve/Redeconve_Visium.R
 ```
 
 ## Tangram
