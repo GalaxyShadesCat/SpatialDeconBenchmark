@@ -1,5 +1,7 @@
 library(spacexr)
 library(Redeconve)
+current_working_directory <- getwd()
+setwd(file.path(current_working_directory, 'scripts'))
 
 # data loading
 st_counts_fp="../data/seqFISH/st_counts.csv"
@@ -61,6 +63,7 @@ sc_labels_combined <- t(rbind(column_names_df, as.data.frame(t(sc_labels))))
 
 res.ctmerge <- sc2type(res, sc_labels_combined) # convert deconvolution result to cell type data  
 print(end_time-start_time)
+setwd(current_working_directory)
 
 res.prop <- to.proportion(res.ctmerge) # convert deconvolution result to cell type ratios
 write.csv(t(as.matrix(res.prop)),out_matrix_norm_fp)
