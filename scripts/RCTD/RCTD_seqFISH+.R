@@ -29,7 +29,7 @@ load_seqFISH=function(){
 }
 
 data = load_seqFISH()
-out_dir="../results/seqFISH/" # output file path
+out_dir="../results/methods/seqFISH/" # output file path
 dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
 out_matrix_norm_fp=file.path(out_dir,sprintf("seqFISH_RCTD.csv")) # output file name
 
