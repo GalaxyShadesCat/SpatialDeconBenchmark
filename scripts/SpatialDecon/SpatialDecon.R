@@ -58,7 +58,7 @@ preprocess=function(data){
 }
 
 
-out_matrix_norm_fp=file.path(out_path,paste0(method,"_SpatialDecon.csv"))
+out_matrix_norm_fp=file.path(output_path,paste0(method,"_SpatialDecon.csv"))
 
 processed_data=preprocess(data)
 
