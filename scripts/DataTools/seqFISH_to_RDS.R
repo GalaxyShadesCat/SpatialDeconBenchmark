@@ -16,7 +16,7 @@ st_counts <- read.csv("st_counts.csv", header = TRUE, row.names = 1)
 st_locations <- read.csv("st_coords.csv", header = TRUE, row.names = 1)
 
 data <- list(
-  st_counts=t(st_counts),
+  st_counts=st_counts,
   st_locations=st_locations,
   sc_counts=sc_counts,
   sc_labels=sc_labels
