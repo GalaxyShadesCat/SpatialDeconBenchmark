@@ -20,6 +20,7 @@ Execute the following commands in your terminal to create the Conda environments
 conda env create -f environments/metrics-env.yml
 conda env create -f environments/tangram-env.yml
 conda env create -f environments/r-env.yml
+conda env create -f environments/spatialdecon-env.yml
 ```
 
 ### Step 2: Install R Packages
@@ -66,6 +67,14 @@ RScript scripts/RCTD/RCTD_Visium.R
 conda activate r-env
 RScript scripts/Redeconve/Redeconve_seqFISH+.R
 RScript scripts/Redeconve/Redeconve_Visium.R
+```
+
+## SpatialDecon
+
+```bash
+conda activate spatialdecon-env
+RScript scripts/SpatialDecon/SpatialDecon.R SeqFISH
+RScript scripts/SpatialDecon/SpatialDecon.R Visium
 ```
 
 ## Tangram

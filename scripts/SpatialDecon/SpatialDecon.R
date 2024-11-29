@@ -1,4 +1,9 @@
 ### Run SpatialDecon ###
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+if (!requireNamespace("Seurat", quietly = TRUE)) {
+    install.packages("Seurat")
+}
+
 library(dplyr)
 library(SpatialDecon)
 library(Seurat)

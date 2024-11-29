@@ -4,4 +4,4 @@
 Rscript ./SpatialDecon.R Visium 
 
 # Run on SeqFISH+ data
-Rscript ./SpatialDecon.R SeqFISH+
+Rscript ./SpatialDecon.R SeqFISH
