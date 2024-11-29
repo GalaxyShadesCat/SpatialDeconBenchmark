@@ -88,6 +88,8 @@ jupyter execute scripts/Metrics/calculate_spot_metrics.ipynb
 | Creation of GitHub Repository & Programming Environment | Lem         |
 | Prepare seqFISH+ Data for Benchmarking                  | Lem         |
 | Filter and Clean Visium Data                            | Vanessa     |
+| Evaluation metric calculation                           | Vanessa     |
+| Method: SpatialDecon                                    | Vanessa     |
 | seqFISH+ Visualization                                  | Vincent     |
 | Method: RCTD                                            | Vincent     |
 | Method: Redeconve                                       | Vincent     |
