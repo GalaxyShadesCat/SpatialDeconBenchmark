@@ -24,7 +24,7 @@ for (i in 1:nrow(location)) {
     a <- a + 1
   }
 }
-setwd('../results/seqFISH/')
+setwd('../results/methods/seqFISH/')
 # data folder stores result from different methods (make sure only contains cell ratio csv)
 
 cell_types = c('microglia', 'eNeuron', 'iNeuron', 'endo_mural', 'astrocytes', 'Olig')
@@ -75,8 +75,8 @@ for (ct in cell_types) { # create png for each cell type
                    legend.position = 'none')+scale_fill_gradient(low = 'white',high = '#EE4000', limits = c(0,1)))
   }
   # output png
-  png(paste('../results/seqFISH_',cell_type,'.png',sep = ''),width = 8000, height = 2000, res = 300)
-  multiplot(pt,p1,p2, cols = 6) # add p3... depending on number of csv in data folder
+  png(paste('../results/plots/seqFISH_',cell_type,'.png',sep = ''),width = 8000, height = 2000, res = 300)
+  multiplot(pt,p1,p2,p3,p4 cols = 6) # add p3... depending on number of csv in data folder
   dev.off()
 }
 setwd(current_working_directory)
