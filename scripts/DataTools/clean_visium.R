@@ -7,7 +7,7 @@ library(Seurat)
 current_working_directory <- getwd()
 
 # Set paths for input and output using the current working directory
-input_path <- paste0(current_working_directory, "/data/Visium/input/")
+input_path <- paste0(current_working_directory, "/data/Visium/raw_data/")
 output_path <- paste0(current_working_directory, "/data/Visium/")
 
 # Read in single-cell RNA count matrix

@@ -1,10 +1,10 @@
 .idea/
 .vscode/
 
-data/Visium/input/spatial/
-data/Visium/input/*.h5
-data/Visium/input/*.gz
-data/Visium/input/*.csv
+data/Visium/raw_data/spatial/
+data/Visium/raw_data/*.h5
+data/Visium/raw_data/*.gz
+data/Visium/raw_data/*.csv
 data/Visium/*.rds
 data/Visium/*.csv
 

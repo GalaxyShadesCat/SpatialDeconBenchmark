@@ -6,8 +6,8 @@ setwd(file.path(current_working_directory, 'scripts'))
 # data loading
 st_counts_fp="../data/seqFISH/st_counts.csv"
 st_locations_fp="../data/seqFISH/st_coords.csv"
-sc_counts_fp="../data/seqFISH/raw_somatosensory_sc_exp.txt"
-sc_labels_fp="../data/seqFISH/somatosensory_sc_labels.txt"
+sc_counts_fp="../data/seqFISH/raw_data/raw_somatosensory_sc_exp.txt"
+sc_labels_fp="../data/seqFISH/raw_data/somatosensory_sc_labels.txt"
 
 st_counts=read.csv(st_counts_fp,sep=",",row.names=1) # row name is global bin id
 st_counts=t(st_counts)
