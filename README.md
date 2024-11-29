@@ -48,14 +48,14 @@ RScript scripts/DataTools/clean_visium.R
 ## RCTD
 ```bash
 conda activate r-env
-RScript scripts/RCTD/RCTD_seqFISH.R
+RScript scripts/RCTD/RCTD_seqFISH+.R
 RScript scripts/RCTD/RCTD_Visium.R
 ```
 
 ## Redeconve
 ```bash
 conda activate r-env
-RScript scripts/Redeconve/Redeconve_seqFISH.R
+RScript scripts/Redeconve/Redeconve_seqFISH+.R
 RScript scripts/Redeconve/Redeconve_Visium.R
 ```
 
@@ -83,14 +83,16 @@ jupyter execute scripts/Metrics/calculate_spot_metrics.ipynb
 
 # Credits
 
-| Task                                                    | Contributor |
-|---------------------------------------------------------|-------------|
-| Creation of GitHub Repository & Programming Environment | Lem         |
-| Prepare seqFISH+ Data for Benchmarking                  | Lem         |
-| Filter and Clean Visium Data                            | Vanessa     |
-| Evaluation metric calculation                           | Vanessa     |
-| Method: SpatialDecon                                    | Vanessa     |
-| Visium Visualization                                    | Vanessa     |
-| seqFISH+ Visualization                                  | Vincent     |
-| Method: RCTD                                            | Vincent     |
-| Method: Redeconve                                       | Vincent     |
+| Task                                                     | Contributor |
+|----------------------------------------------------------|-------------|
+| Creation of GitHub Repository & Programming Environments | Lem         |
+| Preparation of seqFISH+ Data                             | Lem         |
+| Preparation of Visium Data                               | Vanessa     |
+| Evaluation Metric Calculation                            | Vanessa     |
+| Integration of Evaluation Metric Scripts                 | Lem         |
+| Method: RCTD                                             | Vincent     |
+| Method: Redeconve                                        | Vincent     |
+| Method: Tangram                                          | Lem         |
+| Method: SpatialDecon                                     | Vanessa     |
+| Visium Visualization                                     | Vanessa     |
+| seqFISH+ Visualization                                   | Vincent     |
