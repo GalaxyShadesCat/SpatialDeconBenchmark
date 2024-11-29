@@ -1,4 +1,4 @@
-### process visium data from celltolocation paper ###
+### Run SpatialDecon ###
 library(dplyr)
 library(SpatialDecon)
 library(Seurat)
