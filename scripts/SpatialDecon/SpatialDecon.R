@@ -16,10 +16,10 @@ current_working_directory <- getwd()
 input_path <- paste0(current_working_directory, "/data/", method, "/")
 output_path <- paste0(current_working_directory, "/results/methods/", method, "/")
 
-# read in data
+# Read in data
 data <- readRDS(paste0(input_path, "filtered_data.rds"))
 
-# preprocess and normalize ST data
+# Preprocess and normalize ST data
 preprocess=function(data){
   st_counts_norm = sweep(data$st_counts, 2, colSums(data$st_counts), "/") * mean(colSums(data$st_counts)) # normalization
   st_object=CreateSeuratObject(counts=st_counts_norm,assay="Spatial")
@@ -53,7 +53,6 @@ preprocess=function(data){
 }
 
 
-#dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
 out_matrix_norm_fp=file.path(out_path,paste0(method,"_SpatialDecon.csv"))
 
 processed_data=preprocess(data)
@@ -68,10 +67,13 @@ res = runspatialdecon(object = processed_data$st_object,
 end_time <- Sys.time()
 run_time <- as.numeric(difftime(end_time, start_time, units = "secs"))
 print("Finished running.")
-logfile <- file(paste0(out_dir, "/", method, "_runtime.txt"))
+
+# write runtime
+logfile <- file(paste0(out_path, method, "_runtime.txt"))
 writeLines(c("Runtime: ", run_time), logfile)
 close(logfile)
 
+# write deconvolution results
 weights=t(visium_res$beta)
 norm_weights=sweep(weights, 1, rowSums(weights), "/")
 write.csv(as.matrix(norm_weights),out_matrix_norm_fp)
