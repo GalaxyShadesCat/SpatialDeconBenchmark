@@ -1,11 +1,17 @@
 library(spacexr)
 library(Redeconve)
 
-# data loading
-st_counts_fp=("C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/Visium/filtered_st_counts.csv")
-st_locations_fp="C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/Visium/filtered_st_locations.csv"
-sc_counts_fp="C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/Visium/filtered_sc_counts.csv"
-sc_labels_fp="C:/Users/Vincent Yeung/Desktop/School/BIOF3001/Project/STdeconv_benchmark/methods/datasets/Visium/filtered_sc_annotations.txt"
+# Set paths for input and output
+current_working_directory <- getwd()
+
+# Set paths for input and output using the current working directory
+visium_dir <- paste0(current_working_directory, "/data/Visium/")
+
+# Loading data
+st_counts_fp=paste0(visium_dir,"filtered_st_counts.csv")
+st_locations_fp=paste0(visium_dir,"filtered_st_locations.csv")
+sc_counts_fp=paste0(visium_dir,"filtered_sc_counts.csv")
+sc_labels_fp=paste0(visium_dir,"filtered_sc_annotations.txt")
 
 st_counts=read.csv(st_counts_fp,sep=",",row.names=1)
 st_locations=read.csv(st_locations_fp,sep = ",",row.name = 1)
@@ -33,7 +39,7 @@ load_Visium=function(){ # same input format as RCTD
 }
 
 data = load_Visium()
-out_dir="../results/Visium/" # output directory
+out_dir=paste0(current_working_directory,"/results/methods/Visium/") # output directory
 dir.create(out_dir,recursive = TRUE, showWarnings = FALSE)
 out_matrix_norm_fp=file.path(out_dir,sprintf("Visium_Redeconve.csv")) # output file name
 

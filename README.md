@@ -28,14 +28,23 @@ conda activate r-env
 Rscript scripts/DataTools/install_packages.R
 ```
 
-# Prepare seqFISH+ Dataset
+# Process Datasets
+
+## Process seqFISH+ Dataset
 
 ```bash
 conda activate metrics-env
 jupyter execute scripts/DataTools/seqFISH.ipynb
 ```
 
-# Download and Clean Visium Dataset
+## Format seqFISH+ Data for R
+
+```bash
+conda activate r-env
+RScript scripts/DataTools/seqFISH_to_RDS.R
+```
+
+## Download and Clean Visium Dataset
 
 ```bash
 conda activate r-env
