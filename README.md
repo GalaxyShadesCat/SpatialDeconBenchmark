@@ -90,6 +90,7 @@ jupyter execute scripts/Metrics/calculate_spot_metrics.ipynb
 | Filter and Clean Visium Data                            | Vanessa     |
 | Evaluation metric calculation                           | Vanessa     |
 | Method: SpatialDecon                                    | Vanessa     |
+| Visium Visualization                                    | Vanessa     |
 | seqFISH+ Visualization                                  | Vincent     |
 | Method: RCTD                                            | Vincent     |
 | Method: Redeconve                                       | Vincent     |
