@@ -106,7 +106,7 @@ jupyter execute scripts/Metrics/calculate_spot_metrics.ipynb
 | Creation of GitHub Repository & Programming Environments | Lem         |
 | Preparation of seqFISH+ Data                             | Lem         |
 | Preparation of Visium Data                               | Vanessa     |
-| Evaluation Metric Calculation                            | Vanessa     |
+| Evaluation Metric Calculation (RMSE, JSD, PCC, Moran's I)| Vanessa     |
 | Integration of Evaluation Metric Scripts                 | Lem         |
 | Method: RCTD                                             | Vincent     |
 | Method: Redeconve                                        | Vincent     |
