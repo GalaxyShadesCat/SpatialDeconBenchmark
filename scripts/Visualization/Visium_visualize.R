@@ -1,6 +1,6 @@
 ### Visualization of deconvolved cell type proportion estiates ###
 library(ggplot2)
-res_dir <- "/SpatialDeconBenchmark/results"
+res_dir <- "/SpatialDeconBenchmark/results/method/Visium"
 setwd(res_dir)
 
 # read in original counts and location data
