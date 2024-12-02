@@ -1,12 +1,14 @@
 ### Visualization of deconvolved cell type proportion estiates ###
 library(ggplot2)
-setwd("/Users/vanessayu/Downloads/")
+res_dir <- "/SpatialDeconBenchmark/results"
+setwd(res_dir)
 
 # read in original counts and location data
-st_counts <- read.csv("/Users/vanessayu/biof3001/dataset/visium/visium_correct/filtered_st_counts.csv", row.names = 1)
-st_locations <- read.csv("/Users/vanessayu/biof3001/dataset/visium/visium_correct/filtered_st_locations.csv")
+visium_dir <- "/SpatialDeconBenchmark/data/visium"
+st_counts <- read.csv(paste0(visium_dir, "/filtered_st_counts.csv", row.names = 1)
+st_locations <- read.csv(paste0(visium_dir, "/filtered_st_locations.csv")
 
-
+# read in deconvolution results
 res <- lapply(c("SpatialDecon", "rctd", "tangram"), 
               function(method){
               deconvolved_mtx <- read.csv(paste0("Visium_", method, ".txt"), row.names = 1)
